@@ -11,8 +11,7 @@
 
 .markdown pre {
     background-color: #1e1e1e;
-    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
-        monospace;
+    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-weight: 500;
     /* font-size: 16px; */
     line-height: 1.5em;
