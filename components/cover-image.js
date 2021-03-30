@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CoverImage({ title, url, slug }) {
     const imageUrl = `${url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''}${url}`;
@@ -7,11 +8,17 @@ export default function CoverImage({ title, url, slug }) {
             {slug ? (
                 <Link as={`/posts/${slug}`} href="/posts/[slug]">
                     <a aria-label={title}>
-                        <img className="mx-auto" src={imageUrl} alt={title} />
+                        <Image
+                            src={imageUrl}
+                            alt={title}
+                            width={1600}
+                            height={900}
+                            className="mx-auto"
+                        />
                     </a>
                 </Link>
             ) : (
-                <img className="mx-auto" src={imageUrl} alt={title} />
+                <Image className="mx-auto" src={imageUrl} alt={title} width={1600} height={900} />
             )}
         </div>
     );
