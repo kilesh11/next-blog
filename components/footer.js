@@ -8,20 +8,10 @@ export default function Footer() {
                 <div className="py-28 flex flex-col lg:flex-row items-center">
                     <div className="mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
                         <a className="pr-4" href="https://nextjs.org/">
-                            <Image
-                                src="/next-js.svg"
-                                alt="Picture of the author"
-                                width={40}
-                                height={40}
-                            />
+                            <Image src="/next-js.svg" alt="next-js" width={40} height={40} />
                         </a>
                         <a className="pr-4" href="https://strapi.io/">
-                            <Image
-                                src="/strapi.svg"
-                                alt="Picture of the author"
-                                width={40}
-                                height={40}
-                            />
+                            <Image src="/strapi.svg" alt="strapi" width={40} height={40} />
                         </a>
                     </div>
 
@@ -29,12 +19,7 @@ export default function Footer() {
                         <h4>Modified by</h4>
                         <h4 className="mx-3 font-bold">Kyle Suen</h4>
                         <a className="mt-4 lg:mt-0" href="https://github.com/kilesh11">
-                            <Image
-                                src="/github.svg"
-                                alt="Picture of the author"
-                                width={40}
-                                height={40}
-                            />
+                            <Image src="/github.svg" alt="github" width={40} height={40} />
                         </a>
                     </div>
                 </div>
