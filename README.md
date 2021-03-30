@@ -18,10 +18,10 @@ While the Strapi server is running, open a new terminal and `cd` into the Next.j
 cd next-blog
 ```
 
-Copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
+Create `.env.local` (which will be ignored by Git):
 
 ```bash
-cp .env.local.example .env.local
+touch .env.local
 ```
 
 Then set each variable on `.env.local`:
