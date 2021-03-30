@@ -14,6 +14,7 @@ export default function CoverImage({ title, url, slug }) {
                             width={1600}
                             height={900}
                             className="mx-auto"
+                            priority
                         />
                     </a>
                 </Link>
