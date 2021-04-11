@@ -1,6 +1,5 @@
 import { useState, useCallback } from 'react';
 import PostPreview from './post-preview';
-
 import { Pagination } from '@material-ui/lab';
 
 export default function MoreStories({ posts, postsPerPage = null }) {
