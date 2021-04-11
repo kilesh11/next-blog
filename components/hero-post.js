@@ -1,9 +1,8 @@
-import Avatar from './avatar';
 import Date from './date';
 import CoverImage from './cover-image';
 import Link from 'next/link';
 
-export default function HeroPost({ title, coverImage, date, excerpt, author, slug }) {
+export default function HeroPost({ title, coverImage, date, excerpt, slug }) {
     return (
         <section>
             <div className="mb-8 md:mb-16">
@@ -22,7 +21,6 @@ export default function HeroPost({ title, coverImage, date, excerpt, author, slu
                 </div>
                 <div>
                     <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-                    <Avatar name={author.name} picture={author.picture} />
                 </div>
             </div>
         </section>

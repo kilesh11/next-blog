@@ -27,7 +27,7 @@ export default function Index({ allPosts, preview }) {
                             excerpt={heroPost.excerpt}
                         />
                     )}
-                    {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+                    {morePosts.length > 0 && <MoreStories posts={morePosts} postsPerPage={4} />}
                 </Container>
             </Layout>
         </>
