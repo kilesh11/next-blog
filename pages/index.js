@@ -16,7 +16,7 @@ export default function Index({ allPosts, preview }) {
                     <title>Kyle Suen</title>
                 </Head>
                 <Container>
-                    <Intro title="Kyle." secondTitle="Blog" secondHref="/blog" />
+                    <Intro title="Kyle Suen." secondTitle="Blog" secondHref="/blog" />
                     {heroPost && (
                         <HeroPost
                             title={heroPost.title}
