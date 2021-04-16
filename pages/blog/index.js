@@ -13,10 +13,10 @@ export default function Index({ allPosts, preview }) {
         <>
             <Layout preview={preview}>
                 <Head>
-                    <title>Kyle Suen</title>
+                    <title>Blog</title>
                 </Head>
                 <Container>
-                    <Intro title="Kyle." secondTitle="Blog" secondHref="/blog" />
+                    <Intro title="Blog." secondTitle="Home" secondHref="/" />
                     {heroPost && (
                         <HeroPost
                             title={heroPost.title}
