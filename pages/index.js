@@ -4,6 +4,7 @@ import HeroPost from '@/components/hero-post';
 import Intro from '@/components/intro';
 import Layout from '@/components/layout';
 import { getAllPostsForHome } from '@/lib/api';
+import { MY_NAME } from '@/lib/constants';
 import Head from 'next/head';
 
 export default function Index({ allPosts, preview }) {
@@ -13,10 +14,10 @@ export default function Index({ allPosts, preview }) {
         <>
             <Layout preview={preview}>
                 <Head>
-                    <title>Kyle Suen</title>
+                    <title>{MY_NAME}</title>
                 </Head>
                 <Container>
-                    <Intro title="Kyle Suen." secondTitle="Blog" secondHref="/blog" />
+                    <Intro title={`${MY_NAME}.`} secondTitle="Blog" secondHref="/blog" />
                     {heroPost && (
                         <HeroPost
                             title={heroPost.title}

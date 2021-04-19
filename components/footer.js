@@ -1,5 +1,6 @@
 import Container from './container';
 import Image from 'next/image';
+import { MY_NAME } from '@/lib/constants';
 
 export default function Footer() {
     return (
@@ -17,7 +18,7 @@ export default function Footer() {
 
                     <div className="flex flex-col lg:flex-row lg:justify-end justify-center items-center lg:pl-4 lg:w-1/2">
                         <h4>Modified by</h4>
-                        <h4 className="mx-3 font-bold">Kyle Suen</h4>
+                        <h4 className="mx-3 font-bold">{MY_NAME}</h4>
                         <a className="mt-4 lg:mt-0" href="https://github.com/kilesh11">
                             <Image src="/github.svg" alt="github" width={40} height={40} />
                         </a>
