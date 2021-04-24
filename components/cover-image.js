@@ -6,11 +6,9 @@ export default function CoverImage({
     url,
     slug,
     width = 1600,
-    height = 1900,
+    height = 900,
     rounded = false,
 }) {
-    console.log('kyle_debug ~ file: cover-image.js ~ line 5 ~ CoverImage ~ height', height);
-    console.log('kyle_debug ~ file: cover-image.js ~ line 5 ~ CoverImage ~ width', width);
     const imageUrl = `${url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''}${url}`;
     return (
         <div className="sm:mx-0">
@@ -29,7 +27,7 @@ export default function CoverImage({
                 </Link>
             ) : (
                 <Image
-                    className={`mx-auto ${rounded ? 'rounded-full' : ''}`}
+                    className={`mx-auto ${rounded && 'rounded-full'}`}
                     src={imageUrl}
                     alt={title}
                     width={width}

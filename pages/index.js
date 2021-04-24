@@ -26,8 +26,10 @@ export default function Index({ profile }) {
                         height={200}
                         rounded
                     />
-                    <span>{profile.description}</span>
-                    <ul>
+                    <div>
+                        <p className="text-lg leading-relaxed mb-4">{profile.description}</p>
+                    </div>
+                    <ul className="text-lg leading-relaxed mb-4">
                         {profile.skills.map((skill) => (
                             <li key={skill.name}>
                                 <span>{`${skill.name} | ${skill.proficiency}`}</span>
