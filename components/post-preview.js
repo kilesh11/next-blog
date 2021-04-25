@@ -3,9 +3,9 @@ import Date from './date';
 import CoverImage from './cover-image';
 import Link from 'next/link';
 
-export default function PostPreview({ title, coverImage, date, excerpt, slug }) {
+export default function PostPreview({ key, title, coverImage, date, excerpt, slug }) {
     return (
-        <div>
+        <div key={key}>
             <div className="mb-5">
                 <CoverImage slug={slug} title={title} url={coverImage.url} />
             </div>
