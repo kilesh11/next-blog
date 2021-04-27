@@ -66,7 +66,7 @@ export async function getStaticProps({ params, preview = null }) {
 export async function getStaticPaths() {
     const data = await getAllPostsWithSlug();
     return {
-        paths: data?.posts?.map((post) => `/posts/${post.slug}`) || [],
+        paths: data?.posts?.map((post) => `/blog/${post.slug}`) || [],
         fallback: false,
     };
 }

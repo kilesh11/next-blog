@@ -1,42 +1,37 @@
 import Container from '@/components/container';
-import MoreStories from '@/components/more-stories';
-import HeroPost from '@/components/hero-post';
+import Project from '@/components/project';
 import Intro from '@/components/intro';
 import Layout from '@/components/layout';
-import { getAllPostsForHome } from '@/lib/api';
+import About from '@/components/about';
+import Skill from '@/components/skill';
+import { getRecentProfile, getAllProjectForHome } from '@/lib/api';
+import { MY_NAME } from '@/lib/constants';
+
 import Head from 'next/head';
 
-export default function Index({ allPosts, preview }) {
-    const heroPost = allPosts[0];
-    const morePosts = allPosts.slice(1);
+export default function Index({ profile, projects }) {
     return (
         <>
-            <Layout preview={preview}>
+            <Layout>
                 <Head>
-                    <title>Blog</title>
+                    <title>{MY_NAME}</title>
                 </Head>
                 <Container>
-                    <Intro />
-                    {heroPost && (
-                        <HeroPost
-                            title={heroPost.title}
-                            coverImage={heroPost.coverImage}
-                            date={heroPost.date}
-                            author={heroPost.author}
-                            slug={heroPost.slug}
-                            excerpt={heroPost.excerpt}
-                        />
-                    )}
-                    {morePosts.length > 0 && <MoreStories posts={morePosts} postsPerPage={4} />}
+                    <Intro title="C'mon in~" secondTitle="Blog" secondHref="/blog" />
+                    <About url={profile.icon.url} description={profile.description} />
+                    <Skill skills={profile.skills} />
+                    {projects.length > 0 && <Project projects={projects} postsPerPage={4} />}
                 </Container>
             </Layout>
         </>
     );
 }
 
-export async function getStaticProps({ preview = null }) {
-    const allPosts = (await getAllPostsForHome(preview)) || [];
+export async function getStaticProps() {
+    const { profiles } = await getRecentProfile();
+    const { projects } = await getAllProjectForHome();
+
     return {
-        props: { allPosts, preview },
+        props: { profile: profiles[0] ?? {}, projects },
     };
 }
