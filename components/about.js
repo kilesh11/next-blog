@@ -1,4 +1,5 @@
 import CoverImage from '@/components/cover-image';
+import { WELCOME_MSG } from '@/lib/constants';
 
 const About = ({ url, description }) => {
     return (
@@ -12,7 +13,7 @@ const About = ({ url, description }) => {
                         className="text-4xl font-bold leading-tight text-left lg:text-right"
                         style={{ marginTop: -5, color: '#223b64' }}
                     >
-                        {`Hi, I'm Kyle, glad to meet you. Please feel free take a look around!`}
+                        {WELCOME_MSG}
                     </p>
                 </div>
 

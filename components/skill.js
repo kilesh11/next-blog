@@ -3,24 +3,29 @@ import { makeStyles } from '@material-ui/core/styles';
 import WebIcon from '@material-ui/icons/Web';
 import StorageIcon from '@material-ui/icons/Storage';
 import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
-import { color } from '@/lib/constants';
+import { COLOR } from '@/lib/constants';
 
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
+const convertDisplayType = {
+    frontend: 'Frontend',
+    backend: 'Backend',
+    devops: 'DevOps',
+};
 
 const useStyles = makeStyles({
     colorPrimary: {
         backgroundColor: 'rgba(0,0,0,0.1)',
     },
     frontendBarPrimary: {
-        backgroundColor: color.frontend.icon,
+        backgroundColor: COLOR.frontend.icon,
+        borderRadius: '999px',
     },
     backendBarPrimary: {
-        backgroundColor: color.backend.icon,
+        backgroundColor: COLOR.backend.icon,
+        borderRadius: '999px',
     },
     devopsBarPrimary: {
-        backgroundColor: color.devops.icon,
+        backgroundColor: COLOR.devops.icon,
+        borderRadius: '999px',
     },
 });
 
@@ -41,15 +46,15 @@ const Skill = ({ skills }) => {
                     >
                         <div className="flex flex-col mb-10 items-center">
                             {type == 'frontend' && (
-                                <WebIcon style={{ ...style, color: color[type].icon }} />
+                                <WebIcon style={{ ...style, color: COLOR[type].icon }} />
                             )}
                             {type == 'backend' && (
-                                <StorageIcon style={{ ...style, color: color[type].icon }} />
+                                <StorageIcon style={{ ...style, color: COLOR[type].icon }} />
                             )}
                             {type == 'devops' && (
-                                <AllInclusiveIcon style={{ ...style, color: color[type].icon }} />
+                                <AllInclusiveIcon style={{ ...style, color: COLOR[type].icon }} />
                             )}
-                            <p className="text-2xl font-medium">{capitalizeFirstLetter(type)}</p>
+                            <p className="text-2xl font-medium">{convertDisplayType[type]}</p>
                         </div>
                         {skills
                             .filter((skill) => skill.type === type)
@@ -65,7 +70,7 @@ const Skill = ({ skills }) => {
                                         className="self-center w-full rounded-full"
                                         classes={{
                                             colorPrimary: classes.colorPrimary,
-                                            barColorPrimary: classes[color[type].barColorPrimary],
+                                            barColorPrimary: classes[COLOR[type].barColorPrimary],
                                         }}
                                         style={{ height: 7 }}
                                         variant="determinate"
