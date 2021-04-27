@@ -2,6 +2,7 @@ import CoverImage from './cover-image';
 import Image from 'next/image';
 import { Chip } from '@material-ui/core';
 import LanguageIcon from '@material-ui/icons/Language';
+import { color } from '@/lib/constants';
 
 export default function ProjectPreview({ slug, title, coverImage, excerpt, skills, demo, github }) {
     return (
@@ -18,8 +19,12 @@ export default function ProjectPreview({ slug, title, coverImage, excerpt, skill
                     <Chip
                         className="mx-1 my-1"
                         key={skill.name}
-                        variant="outlined"
                         label={skill.name}
+                        style={{
+                            backgroundColor: color[skill.type].icon,
+                            color: 'white',
+                            fontWeight: '600',
+                        }}
                     />
                 ))}
             </div>
