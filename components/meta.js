@@ -14,8 +14,10 @@ export default function Meta() {
             <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
             <meta name="theme-color" content="#000" />
             <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+            <meta name="title" content={`${MY_NAME}`} />
             <meta name="description" content={`${MY_NAME} developer portfolio and blog`} />
             <meta property="og:title" content={`${MY_NAME} developer portfolio and blog`} />
+            <meta name="og:description" content={`${MY_NAME} developer portfolio and blog`} />
             <meta property="og:image" content={HOME_OG_IMAGE_URL} />
         </Head>
     );
