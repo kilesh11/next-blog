@@ -17,7 +17,7 @@ export default function Index({ profile, projects }) {
                     <title>{MY_NAME}</title>
                 </Head>
                 <Container>
-                    <Intro title="C'mon in~" secondTitle="Blog" secondHref="/blog" />
+                    <Intro title="C'mon in." secondTitle="Blog" secondHref="/blog" />
                     <About url={profile.icon.url} description={profile.description} />
                     <Skill skills={profile.skills} />
                     {projects.length > 0 && <Project projects={projects} postsPerPage={4} />}
